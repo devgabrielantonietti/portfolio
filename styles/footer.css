@@ -2,36 +2,63 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    padding: 20px;
+    gap: 9px; 
+    padding: 12px; 
 }
 
-.social-links{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+ul{
+    list-style-type: none;
     display: flex;
+    position: relative;
+    gap: 24px; 
+}
+
+ul li{
+    width: 48px;   
+    height: 48px;  
+    box-shadow: 0 5px 15px #8400a8; 
+    border-radius: 36px; 
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 10px 0;
-    z-index: 1000;
+    position: relative;
+    transition: 0.2s;
+}
+ul li:hover{
+    width: 108px; 
+}
+ul li span{
+    position: absolute;
+}
+ul li .icon{
+    color: #ccc;
+    font-size: 1.3em; 
+    transition: .2s;
+}
+ul li .text{
+    color: rgb(255, 255, 255);
+    font-size: 12px; 
+    transform: scale(0);
+    transition: .2s;
+    transition-delay: .1s;
 }
 
-
-footer a button {
-    background-color: transparent;
-    border: 2px solid #ffffff;
-    color: #ffffff;
-    padding: 10px 25px;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    transition: all 0.3s ease;
+ul li:hover .text{
+    transform: scale(1);
+}
+ul li:hover .icon{
+    transform: scale(0);
 }
 
-footer a button:hover {
-    background-color: #00aaff;
-    border-color: #00aaff;
+ul li::before{
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(45deg, var(--cor1), var(--cor2));
+    inset: 0;
+    opacity: 0;
+    border-radius: 36px; 
+}
+
+ul li:hover::before{
+    opacity: 1;
 }
